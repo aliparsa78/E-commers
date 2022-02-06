@@ -23,6 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('/dashboard',function(){
-        return "welcom admin";
+        return view('admin.index');
     });
 });
