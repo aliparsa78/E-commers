@@ -23,6 +23,7 @@
   <title>
     Material Dashboard 2 by Creative Tim
   </title>
+  <link href="../admin/assets/style.css" rel="stylesheet" />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -36,13 +37,17 @@
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 </head>
-@include('layouts.inc.sidebar')
+
 <body class="g-sidenav-show  bg-gray-200">
- @include('layouts.inc.navebar')
+@include('layouts.inc.sidebar')
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+  @include('layouts.inc.navebar') 
+  <div class="container-fluid py-4">
    @yield('content')
+    </div>
+    @include('layouts.inc.footer')
   </main>
-  @include('layouts.inc.footer')
+  
  
 </body>
 
