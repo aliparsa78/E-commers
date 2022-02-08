@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <a href="{{url('edite-catagory/'.$item->id)}}" class="btn btn-primary">Edite</a>
-                            <a href="" class="btn btn-danger" >Delete</a>
+                            <a href="{{url('delete-catagory/'.$item->id)}}" class="btn btn-danger" >Delete</a>
                         </td>
                     </tr>
                 @endforeach

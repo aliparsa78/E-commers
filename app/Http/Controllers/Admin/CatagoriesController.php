@@ -78,4 +78,18 @@ class CatagoriesController extends Controller
 
         return redirect('/dashboard');
     }
+
+    function delete($id){
+        $catagory = Catagory::find($id);
+        
+        if($catagory->image){
+            $path ="admin/assets/upload/catagory/".$catagory->image;
+            if(File::exists($path)){
+                File::delete($path);
+            }
+        }
+        $catagory->delete();
+        return redirect('/dashboard')->with('status','catagory deleted successfully');
+    }
+
 }
