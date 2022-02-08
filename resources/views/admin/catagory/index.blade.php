@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" >
-    <div class="card " style="margint-bottom:200px; padding-bottom:100px;">
+    <div class="card ">
 <div class="card">
     <div class="card-header">
         <h4>Catagory</h4>
@@ -32,11 +32,11 @@
                             
                             
                         <td>
-                            <img src="{{asset('admin/assets/upload/catagory/'.$item->image)}}" width="150px;" height="150px" alt="">
+                            <img src="{{asset('admin/assets/upload/catagory/'.$item->image)}}" width="120px;" height="90px" alt="">
                         </td>
                         <td>
-                            <button class="btn btn-primary">Edite</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <a href="{{url('edite-catagory/'.$item->id)}}" class="btn btn-primary">Edite</a>
+                            <a href="" class="btn btn-danger" >Delete</a>
                         </td>
                     </tr>
                 @endforeach

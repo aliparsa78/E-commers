@@ -1,4 +1,8 @@
 #add-catagory{
     border-bottom:solid gray 1px;
+    margin-bottom: 30px;
     
+}
+#e-img{
+    width:100%; height:350px;
 }
