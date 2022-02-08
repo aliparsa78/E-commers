@@ -44,7 +44,13 @@
   @include('layouts.inc.navebar') 
   <div class="container-fluid py-4">
    @yield('content')
-    </div>
+   @if(Session::get('status'))
+   <div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close bg-success border-none" data-dismiss="alert">&times;</button>
+    {{Session::get('status')}}
+  </div>
+   @endif
+  </div>
     @include('layouts.inc.footer')
   </main>
   

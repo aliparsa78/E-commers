@@ -76,7 +76,7 @@ class CatagoriesController extends Controller
         $catagory->meta_keyword=$req->input('meta_keyword');
         $catagory->update();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('status','Catagory Update successfuly');
     }
 
     function delete($id){
