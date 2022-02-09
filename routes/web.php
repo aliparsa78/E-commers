@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CatagoriesController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,8 @@ Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('edite-catagory/{id}',[CatagoriesController::class,'edite']);
     Route::post('update-catagory/{id}',[CatagoriesController::class,'update']);
     Route::get('delete-catagory/{id}',[CatagoriesController::class,'delete']);
+    
+    Route::get('/products',[ProductController::class,'index']);
+    Route::get('/add-products',[ProductController::class,'add']);
+    Route::post('/insert-product',[ProductController::class,'insert']);
 });
