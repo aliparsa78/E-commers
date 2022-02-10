@@ -37,4 +37,7 @@ Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('/products',[ProductController::class,'index']);
     Route::get('/add-products',[ProductController::class,'add']);
     Route::post('/insert-product',[ProductController::class,'insert']);
+    Route::get('/edite-product/{id}',[ProductController::class,'edite']);
+    Route::post('/update-product/{id}',[ProductController::class,'update']);
+    Route::get('/delete-product/{id}',[ProductController::class,'delete']);
 });

@@ -36,8 +36,8 @@
           <img src="{{asset('admin/assets/upload/product/'.$item->image)}}" width="120px;" height="90px" alt="">
           </td>
           <td>
-          <a href="{{url('edite-catagory/'.$item->id)}}" class="btn btn-primary">Edite</a>
-          <a href="{{url('delete-catagory/'.$item->id)}}" class="btn btn-danger" >Delete</a>
+          <a href="{{url('edite-product/'.$item->id)}}" class="btn btn-primary">Edite</a>
+          <a href="{{url('delete-product/'.$item->id)}}" class="btn btn-danger" >Delete</a>
           </td>
           </tr>
          @endforeach
