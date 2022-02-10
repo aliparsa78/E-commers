@@ -40,9 +40,9 @@
 
 <body class="g-sidenav-show  bg-gray-200">
 @include('layouts.inc.sidebar')
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+  <main class="main-content  border-radius-lg ">
   @include('layouts.inc.navebar') 
-  <div class="container-fluid py-4">
+  <div class="container " >
   @if(Session::get('status'))
    <div class="alert alert-success alert-dismissible fade show">
     <button type="button" class="close bg-success border-none" data-dismiss="alert">&times;</button>
