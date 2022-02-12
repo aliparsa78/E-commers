@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index()
-    {
+    function index(){
         return view('admin.index');
     }
 }
