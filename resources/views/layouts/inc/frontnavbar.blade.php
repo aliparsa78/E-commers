@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="frontend/bootstrap/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="">
+    
 </head>
 
 <body>
@@ -41,7 +42,7 @@
     </ul>
   <ul class="nav ">
     <li class="nav-item active"> 
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{ url('catagory') }}">Catagory</a>

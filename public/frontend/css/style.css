@@ -6,3 +6,6 @@ nav ul li .nav-link{
     margin-left: 150px;
     color: black;
 }
+a{
+    text-decoration: none !important;
+}

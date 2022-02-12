@@ -11,6 +11,7 @@
 <div class="py-5">
     <div class="container">
         <div class="row">
+            <h1>Futured Products</h1>
             <div class="owl-carousel owl-theme">  
                 @foreach($future_product as $item)
                     <div class="item">
@@ -22,6 +23,30 @@
                                 
                             </div>
                         </div>
+                    </div>
+                @endforeach 
+            </div>
+        </div>
+    </div>
+</div>
+<!--   End Future Product    --->
+
+<div class="py-1">
+    <div class="container">
+        <div class="row">
+            <h1>Trending Catagory</h1><br><br>
+            <div class="owl-carousel owl-theme">  
+                @foreach($trednig_catagory as $trend)
+                    <div class="item">
+                        <a href="{{url('view-catagory/'.$trend->id)}}">
+                            <div class="card">
+                                <img src="{{asset('admin/assets/upload/catagory/'.$trend->image)}}" alt="">
+                                <div class="card-body">
+                                    <h5>{{$trend->name}}</h5>
+                                    <p>{{$trend->selling_price}}</p>  
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 @endforeach 
             </div>
