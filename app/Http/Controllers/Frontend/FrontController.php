@@ -16,12 +16,23 @@ class FrontController extends Controller
   }
   function catagory(){
     $catagory = Catagory::where('status','0')->get();
-    return view('frontend.catagory',compact('catagory'));
+    return view('frontend.catagory.index',compact('catagory'));
   }
   function view_catagory($id){
     $product = Product::where('cat_id',$id)->get();
     $catagory = Catagory::find($id);
     
-    return view('frontend.product',compact('product','catagory'));
+    return view('frontend.products.index',compact('product','catagory'));
   }
+  function product_view($id){
+
+      if(Product::where('id',$id)->exists()){
+          $product = Product::where('id',$id)->first();
+          return view('frontend/products/view',compact('product'));
+      }else{
+        return redirect('/')->with('status','Product not exists');
+      }
+    }
+    
+  
 }

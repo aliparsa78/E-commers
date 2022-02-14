@@ -15,6 +15,7 @@
             <div class="owl-carousel owl-theme">  
                 @foreach($future_product as $item)
                     <div class="item">
+                        <a href="#">
                         <div class="card">
                             <img src="{{asset('admin/assets/upload/product/'.$item->image)}}" alt="">
                             <div class="card-body">
@@ -23,6 +24,7 @@
                                 
                             </div>
                         </div>
+                        </a>
                     </div>
                 @endforeach 
             </div>

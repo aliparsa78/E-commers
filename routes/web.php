@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/catagory',[FrontController::class,'catagory']);
 Route::get('/view-catagory/{id}',[FrontController::class,'view_catagory']);
+Route::get('/product/{id}',[FrontController::class,'product_view']);
 Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('/dashboard',[FrontendController::class,'index']);
     

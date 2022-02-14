@@ -23,16 +23,17 @@ Products
     <div class="container">
     <H1>{{$catagory->slug}}</H1>
         <div class="row">
-            
                 @foreach($product as $item)
                 <div class="col-md-3 mb-3 mt-5">
-                    <div class="card">
-                        <img src="{{asset('admin/assets/upload/product/'.$item->image)}}" alt="">
-                        <div class="card-body">
-                            <h5>{{$item->name}}</h5>
-                            <p>{{$item->selling_price}}</p>  
-                        </div>
-                    </div>        
+                    <a href="{{url('product/'.$item->id)}}">
+                        <div class="card">
+                            <img src="{{asset('admin/assets/upload/product/'.$item->image)}}" alt="">
+                            <div class="card-body">
+                                <h5>{{$item->name}}</h5>
+                                <p>{{$item->selling_price}}</p>  
+                            </div>
+                        </div> 
+                    </a>       
                 </div> 
                 @endforeach 
               
