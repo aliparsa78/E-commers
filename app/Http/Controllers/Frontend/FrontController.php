@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Catagory;
-
+use Session;
 class FrontController extends Controller
 {
   function index(){
@@ -25,7 +25,7 @@ class FrontController extends Controller
     return view('frontend.products.index',compact('product','catagory'));
   }
   function product_view($id){
-
+      
       if(Product::where('id',$id)->exists()){
           $product = Product::where('id',$id)->first();
           return view('frontend/products/view',compact('product'));

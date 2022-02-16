@@ -20,7 +20,7 @@
 
 @section('content')
     <div class="container">
-        <div class="card shadow">
+        <div class="card shadow productdata">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 border-right">
@@ -44,21 +44,26 @@
                         @else
                             <label class="badge bg-danger text-white" >Out of stock</label>
                         @endif
+
                         <div class="row ">
-                            <div class="col-md-3">
-                                <label for="Quentity">Quentity</label>
-                                <div class="input-group text-center text-inline mb-3">
-                                    <span class="input-group-text">-</span>
-                                    <input type="text" name="quantity" value="1" class="form-control">
-                                    <span class="input-group-text">+</span>
-                                </div>
+                            <div class="col-md-6">
+                                <form action="add-to-cart" method="POST">
+                                    @csrf
+                                    <label for="Quentity">Quentity</label>
+                                    <input type="hidden" name="prod_id" value="{{$product->id}}" class="prod_id">
+                                    <div class="input-group text-center text-inline mb-3">
+                                        <input type="number" name="qty" class=" inputqty mr-4" style="width:70px; border-radius:5px;">
+                                        <button type="button" class="btn btn-success me-3 float-start addtocartbtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="col-md-9 mt-2">
-                                <br>
-                                <button type="button" class="btn btn-success me-3 float-start">Add to wishlist</button>
-                                <button type="button" class="btn btn-primary me-3 float-start">Add to cart</button>
+                            
+                            <div class="col-md-6 mt-2">
+                            <br>
+                                <button type="button" class="btn btn-primary me-3 float-start addtocartbtn">Add to wishlist <i class="fa fa-shopping-cart"></i></button>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -67,3 +72,25 @@
 @endsection
 </body>
 </html>
+
+@section('scripts')
+<!-- <script>
+    $(document).ready(function(){
+        $('.addtocartbtn').click(function(e){
+            e.preventDefault();
+            
+            var product_id = $(this).closest('.productdata').find('.prod_id').val();
+            var product_qty = $(this).closest('.productdata').find('.inputqty').val();
+            $.ajax({
+                method: "post",
+                url:"/add-to-cart",
+                data:{
+                    'product_id':product_id,
+                    'product_qty':product_qty,
+                }
+            });
+        });
+    });
+</script> -->
+@endsection
+

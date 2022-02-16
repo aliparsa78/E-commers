@@ -8,7 +8,7 @@
     <script src="frontend/bootstrap/js/bootstrap.bundle.js"></script>
     @if(session('status'))
       <script>
-        swal("{{sesstion('status')}}")
+        swal("{{session('status')}}")
       </script>
     @endif
     @yield('scripts')
