@@ -9,9 +9,13 @@
     <div class="py-5">
         <div class="container">
             <h2>All Catagories</h2><br><br>
+            @if(Session::get('status'))
+                <p class="text-danger">{{Session::get('status')}}</p>
+            @endif
             <div class="row">
                 @foreach($catagory as $item)
                     <div class="col-md-3 mb-4">
+       
                         <a href="{{ url('view-catagory/'.$item->id)}}">
                             <div class="card">
                                 <img src="{{asset('admin/assets/upload/catagory/'.$item->image)}}" alt="">

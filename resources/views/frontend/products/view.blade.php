@@ -20,11 +20,11 @@
 
 @section('content')
     <div class="container">
-        <div class="card shadow productdata">
+        <div class="card shadow productdata" id="add-to-cart">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 border-right">
-                        <img src="{{asset('admin/assets/upload/product/'.$product->image)}}" width="400px;" alt="product image">
+                        <img src="{{asset('admin/assets/upload/product/'.$product->image)}}" width="350px;" alt="product image">
                     </div>
                     <div class="col-md-8">
                         <h2 class="mb-0 ml-2">
@@ -47,13 +47,14 @@
 
                         <div class="row ">
                             <div class="col-md-6">
+                           
                                 <form action="add-to-cart" method="POST">
                                     @csrf
                                     <label for="Quentity">Quentity</label>
                                     <input type="hidden" name="prod_id" value="{{$product->id}}" class="prod_id">
                                     <div class="input-group text-center text-inline mb-3">
-                                        <input type="number" name="qty" class=" inputqty mr-4" style="width:70px; border-radius:5px;">
-                                        <button type="button" class="btn btn-success me-3 float-start addtocartbtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                        <input type="number" name="qty" class=" inputqty mr-4" value="1" style="width:70px; border-radius:5px;">
+                                        <button type="submit" class="btn btn-success me-3 float-start addtocartbtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
                                     </div>
                                 </form>
                             </div>

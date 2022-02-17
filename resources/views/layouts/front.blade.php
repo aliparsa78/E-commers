@@ -1,6 +1,6 @@
 
   @include('layouts.inc.frontnavbar')
-
+  
    @yield('content')
     <script src="frontend/bootstrap/js/jquery.min.js"></script>
     <script src="frontend/bootstrap/js/owl.carousel.min.js"></script>

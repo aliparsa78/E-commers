@@ -56,8 +56,19 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Regester</a>
     </li>
+    <?php 
+      use App\Http\Controllers\Auth\LoginController;
+      use App\Models\Cart;
+      if(Auth::user()){
+        $count = Cart::all()->count();
+      
+    ?>
+    
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link " href="{{url('mycart')}}">Mycart {{$count}}</a>
     </li>
+    <?php
+    }
+    ?>
   </ul>
 </nav>

@@ -32,6 +32,8 @@ Route::get('/product/{id}',[FrontController::class,'product_view']);
 
 Route::middleware(['auth'])->group(function(){
     Route::post('/add-to-cart',[CartController::class,'addtocart']);
+    Route::get('/mycart',[CartController::class,'mycart']);
+    Route::get('/delete-cart/{id}',[CartController::class,'delete_cart']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){
