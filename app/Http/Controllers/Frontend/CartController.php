@@ -49,10 +49,13 @@ class CartController extends Controller
     }
 
     function delete_cart($id){
+        
+        
         $cart = Cart::find($id);
-        if(Cart::where('prod_id',$id)->where('user_id',Auth::id())->exists()){
-        $cart->delete();
-        return redirect("/catagory")->with('status','Cart item deleted successfuly');
+        if(Cart::where('id',$id)->where('user_id',Auth::id())->exists()){
+
+        $d = $cart->delete();
+        return redirect("/mycart")->with('status','Cart item deleted successfuly');
         }
     }
 }
