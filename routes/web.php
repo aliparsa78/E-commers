@@ -33,6 +33,8 @@ Route::get('/product/{id}',[FrontController::class,'product_view']);
 Route::middleware(['auth'])->group(function(){
     Route::post('/add-to-cart',[CartController::class,'addtocart']);
     Route::get('/mycart',[CartController::class,'mycart']);
+    Route::get('/edite-cart/{id}',[CartController::class,'edite']);
+    Route::post('/update-cart/{id}',[CartController::class,'update_cart']);
     Route::get('/delete-cart/{id}',[CartController::class,'delete_cart']);
 });
 

@@ -40,12 +40,26 @@ class CartController extends Controller
     
     function mycart(Request $req){
         $product = Cart::where('user_id',Auth::id())->get();
+        
         // $user_id = Auth::id();
         // $data = DB::table('carts')->join("products","carts.prod_id",'=','products.id')
         // ->where('carts.user_id',$user_id)
         // ->select('products.*')->get();
     
         return view('frontend.mycart',compact('product'));
+    }
+    
+    
+    function edite(Request $req,$id){
+        $product = Cart::find($id);
+        return view("frontend.editeCart",compact('product'));
+    }
+    function update_cart(Request $req,$id){
+        
+        $update= Cart::find($id);
+        $update->prod_qty = $req->input("qty");
+        $update->save();
+        return redirect('mycart');
     }
 
     function delete_cart($id){
@@ -58,4 +72,5 @@ class CartController extends Controller
         return redirect("/mycart")->with('status','Cart item deleted successfuly');
         }
     }
+
 }
