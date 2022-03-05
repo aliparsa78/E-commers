@@ -1,7 +1,14 @@
 nav ul li .nav-link{
-
+color: white;
+font-size: 20px;
+font-weight: bold;
 
 }
+nav{
+    background-color: red;
+    color: white;
+}
+
 #e-shop{
     margin-left: 150px;
     color: black;
@@ -15,3 +22,15 @@ a{
 #add-to-cart{
     background-color: aliceblue;
 }
+.checkout-form{
+    font-size: 20px;
+    font-weight: bold;
+}
+.checkout-form input{
+    height: 40px;
+}
+.table-checkout{
+    font-size: 20px;
+    padding: 1%;
+}
+

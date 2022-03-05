@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CatagoriesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/edite-cart/{id}',[CartController::class,'edite']);
     Route::post('/update-cart/{id}',[CartController::class,'update_cart']);
     Route::get('/delete-cart/{id}',[CartController::class,'delete_cart']);
+// Check out Rout
+    Route::get('checkout',[CheckoutController::class,'index']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){
