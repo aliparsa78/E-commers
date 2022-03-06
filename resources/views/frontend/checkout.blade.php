@@ -68,7 +68,10 @@
                                 <th>Qty</th>
                                 <th>Selling_price</th>
                                 @foreach($cartitem as $item)
+                                   
+                                   
                                     <tr> 
+                                        
                                         <td>{{$item->products->name}}</td>
                                         <td>{{$item->prod_qty}}</td>
                                         <td>{{$item->products->selling_price}}</td>
@@ -77,7 +80,7 @@
                                 </tbody>
                             </table>                        
                     </div>
-                    <a href="" class="btn btn-primary mb-2" style="width:190px; margin-left:230px;">Place Order</a>
+                    <a href="checkout/{{$item->products->id}}" class="btn btn-primary mb-2" style="width:190px; margin-left:230px;">Place Order</a>
 
                 </div>
 

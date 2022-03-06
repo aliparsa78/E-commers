@@ -31,12 +31,20 @@
                             {{$product->products->selling_price}}
                             </div>
                             <div class="col-md-6">
+                            @if($product->prod_qty < $product->products->qty)
                             <form action="update-cart/{{$product->id}}" method="post">
                                 @csrf
                                     <label >quantity</label>
+                                    
                                     <input type="number" name="qty" value ="{{$product->prod_qty}}">
+                                    
                                     <input type="submit" class="btn btn-success" value="Update" style="float:right; margin-right:-60px;margin-top:-10px;">
                                 </form>
+                                
+                                @else
+                                <h3>Out of stock</h3>
+                                <a href="{{url('/mycart')}}" class="btn btn-info">Back to cart</a>
+                                @endif
                             </div>
                         </div>
                         <hr>

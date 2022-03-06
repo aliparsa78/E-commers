@@ -20,7 +20,7 @@
 
 @section('content')
     <div class="container">
-        <div class="card shadow productdata" id="add-to-cart">
+        <div class="card shadow productdata mt-5" id="add-to-cart">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 border-right">
@@ -54,7 +54,11 @@
                                     <input type="hidden" name="prod_id" value="{{$product->id}}" class="prod_id">
                                     <div class="input-group text-center text-inline mb-3">
                                         <input type="number" name="qty" class=" inputqty mr-4" value="1" style="width:70px; border-radius:5px;">
-                                        <button type="submit" class="btn btn-success me-3 float-start addtocartbtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                        @if($product->qty>0)
+                                            <button type="submit" class="btn btn-success me-3 float-start addtocartbtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                        @else
+                                            <label class="badge bg-danger text-white" ></label>
+                                        @endif
                                     </div>
                                 </form>
                             </div>
