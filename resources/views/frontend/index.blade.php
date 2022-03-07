@@ -9,6 +9,11 @@
 
 @include('layouts.inc.slider')
 <div class="py-5">
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+        <h4>{{ session('status') }}</h4>
+    </div>
+@endif
     <div class="container">
         <div class="row">
             <h1>Futured Products</h1>

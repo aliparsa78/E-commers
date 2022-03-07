@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\OrderItem;
 use Auth;
 
@@ -48,7 +49,29 @@ class CheckoutController extends Controller
                 'qty' => $item->prod_qty,
                 'price' => $item->products->selling_price,
                 ]);
+
+                $prod = Product::where('id',Auth::id())->first();
+                $prod->qty = $prod->qty-$item->prod_qty;
+                $prod->update();
         }
+         
+        if(Auth::user()->address1==NULL)
+        {
+        $user = User::where('id',Auth::id())->first();
+        $user->lname = $req->input('lname');
+        $user->phone = $req->input('phone');
+        $user->address1 = $req->input('address1');
+        $user->address2 = $req->input('address2');
+        $user->city = $req->input('city');
+        $user->state = $req->input('state');
+        $user->country = $req->input('country');
+        $user->pincode = $req->input('pincode');
+        $user->update();
+            
+        }
+        $cartitem = Cart::where('user_id',Auth::id())->get();
+        Cart::destroy($cartitem);
+        return redirect('/')->with('status','Product has been orderded successfuly!');
 
     }
 }

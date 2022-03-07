@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <div class="container">
     
         <div class="card shadow productdata" id="add-to-cart">
@@ -50,7 +51,7 @@
         <div class="card">
             <div class="card-footer">
                 <h5>Total price:{{$total}}</h5>
-                <a href="{{url('checkout')}}" class="btn btn-success" style="float:right; margin-top:-50px;">Checkout</a>
+                <a href="{{url('checkout')}}" class="btn btn-info" style="float:right; margin-top:-50px;">Checkout</a>
             </div>
             
         </div>

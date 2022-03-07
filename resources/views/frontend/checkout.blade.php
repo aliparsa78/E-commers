@@ -17,43 +17,43 @@
                             <div class="row checkout-form">
                                 <div class="col-md-6">
                                     <label">FirstName</label>
-                                    <input type="text" name="fname" class="form-control">
+                                    <input type="text"value="{{Auth::user()->name}}" name="fname" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">LastName</label>
-                                    <input type="text" name="lname" class="form-control">
+                                    <input type="text" value="{{Auth::user()->lname}}" name="lname" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">Email</label>
-                                    <input type="email" name="email" class="form-control">
+                                    <input type="email" value="{{Auth::user()->email}}" name="email" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">Phone</label>
-                                    <input type="text" name="phone" class="form-control">
+                                    <input type="text" value="{{Auth::user()->phone}}" name="phone" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">address1</label>
-                                    <input type="text" name="address1" class="form-control">
+                                    <input type="text" value="{{Auth::user()->address1}}" name="address1" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">address2</label>
-                                    <input type="text" name="address2" class="form-control">
+                                    <input type="text" value="{{Auth::user()->address2}}" name="address2" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">City</label>
-                                    <input type="text" name="city" class="form-control">
+                                    <input type="text" value="{{Auth::user()->city}}" name="city" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">state</label>
-                                    <input type="text" name="state" class="form-control">
+                                    <input type="text" value="{{Auth::user()->state}}" name="state" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">Country</label>
-                                    <input type="text" name="country" class="form-control">
+                                    <input type="text" value="{{Auth::user()->country}}" name="country" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label">Pincode</label>
-                                    <input type="text" name="pincode" class="form-control">
+                                    <input type="text"value="{{Auth::user()->pincode}}" name="pincode" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -70,10 +70,7 @@
                                     <th>Qty</th>
                                     <th>Selling_price</th>
                                     @foreach($cartitem as $item)
-                                    
-                                    
-                                        <tr> 
-                                            
+                                        <tr>                                      
                                             <td>{{$item->products->name}}</td>
                                             <td>{{$item->prod_qty}}</td>
                                             <td>{{$item->products->selling_price}}</td>
