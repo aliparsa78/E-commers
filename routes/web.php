@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/delete-cart/{id}',[CartController::class,'delete_cart']);
 // Check out Rout
     Route::get('checkout',[CheckoutController::class,'index']);
+    Route::post('/place-order',[CheckoutController::class,'place_order']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){
