@@ -64,6 +64,7 @@
                         <div class="card-body">
                             <h4>Order Details</h4>
                             <hr>
+                            
                                 <table class="table table-checkout shadow">
                                     <tbody>
                                     <th>Name</th>
@@ -77,10 +78,16 @@
                                         </tr>
                                     @endforeach
                                     </tbody>
-                                </table>                        
+                                </table>    
+                            
                         </div>
+                        @if($cartitem->count() > 0)
                         <input type="submit" class="btn btn-primary mb-2" style="width:190px; margin-left:230px;" value="Place Order">
-
+                        @else
+                            <div class="card-body text-center">
+                                <h4>Your cart is empty </h4>
+                            </div>
+                        @endif
                     </div>
 
                 

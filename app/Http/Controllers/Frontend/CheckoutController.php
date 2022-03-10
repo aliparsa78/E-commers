@@ -24,6 +24,7 @@ class CheckoutController extends Controller
         }
 
         $cartitem = Cart::where('user_id',Auth::id())->get();
+        
         return view("Frontend.checkout",compact('cartitem'));
     }
     function place_order(Request $req){
