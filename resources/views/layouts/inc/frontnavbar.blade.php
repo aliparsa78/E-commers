@@ -18,6 +18,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="frontend/js/jquery.min.js">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
@@ -56,6 +57,35 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Regester</a>
     </li>
+    <div class="dropdown">
+      <button type="button" class="btn fa fa-user dropdown-toggle" data-toggle="dropdown">
+        Me
+      </button>
+      <div class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" href="{{url('my-order')}}">My Order</a>
+      </li>
+        <li>
+          <?php if(Auth::user()){
+            ?>
+          
+            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+                    
+          <?php
+          }else{
+            ?>
+            <a class="dropdown-item" href="#">Sign in</a>
+            <?php
+          } ?>
+        </li>
+          
+      </div>
+    </div>
     <?php 
       use App\Http\Controllers\Auth\LoginController;
       use App\Models\Cart;
@@ -63,7 +93,7 @@
         $count = Cart::all()->count();
       
     ?>
-    
+ 
     <li class="nav-item">
       <a class="nav-link " href="{{url('mycart')}}">Mycart {{$count}}</a>
     </li>

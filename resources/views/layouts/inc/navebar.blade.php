@@ -17,7 +17,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                <i class="fa fa-user">user</i>
               </a>
-              <ul class="dropdown-menu" >
+              <ul class="dropdown-menu" >          
                   <li>
                       <a class="dropdown-item" href="#">
                       Myprofile
@@ -30,9 +30,7 @@
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
                       </form>
-                  </li>
-                   
-                  
+                  </li>  
               </ul>
             </li>
           </ul>

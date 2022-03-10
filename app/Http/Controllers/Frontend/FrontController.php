@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Catagory;
+use Auth;
 use Session;
 class FrontController extends Controller
 {

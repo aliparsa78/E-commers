@@ -50,6 +50,7 @@
         @else
             <div class="card-body text-center">
                 <h4>Your <i class="fa fa-shopping-cart "></i> Cart is Empty</h4>
+                <a href="{{url('/')}}" class="btn btn-info">Continue Shopping</a>
             </div>
         @endif
         </div>

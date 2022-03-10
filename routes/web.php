@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,11 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/edite-cart/{id}',[CartController::class,'edite']);
     Route::post('/update-cart/{id}',[CartController::class,'update_cart']);
     Route::get('/delete-cart/{id}',[CartController::class,'delete_cart']);
-// Check out Rout
+// CheckOut Rout
     Route::get('checkout',[CheckoutController::class,'index']);
     Route::post('/place-order',[CheckoutController::class,'place_order']);
+// My order rout
+    Route::get('/my-order',[OrderController::class,'index']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){

@@ -28,7 +28,9 @@ class CheckoutController extends Controller
         return view("Frontend.checkout",compact('cartitem'));
     }
     function place_order(Request $req){
+        $user_id = Auth::id();
         $order = new Order();
+        $order->user_id = $user_id;
         $order->fname = $req->input('fname');
         $order->lname = $req->input('lname');
         $order->email = $req->input('email');
@@ -36,10 +38,20 @@ class CheckoutController extends Controller
         $order->address1 = $req->input('address1');
         $order->address2 = $req->input('address2');
         $order->city = $req->input('city');
-        $order->state = $req->input('state');
+        $order->status = $req->input('state');
         $order->country = $req->input('country');
         $order->pincode = $req->input('pincode');
+        
+        
+        $cartitem_total = Cart::where('user_id',Auth::id())->get();
+        foreach($cartitem_total as $itme_total){
+            $total_price = 0;
+            $total_price = ($total_price+$itme_total->prod_qty)*$itme_total->products->selling_price;
+            $order->total_price = $total_price;     
+        }
+        
         $order->save();
+
         $o_id = $order->id;
         $cartitem = Cart::where('user_id',Auth::id())->get();
         foreach($cartitem as $item)

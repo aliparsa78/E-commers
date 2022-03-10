@@ -36,7 +36,8 @@ class ProductController extends Controller
         $product->meta_title = $req->input('meta_title');
         $product->meta_keyword = $req->input('meta_keyword');
         $product->meta_description = $req->input('meta_description');
-
+        $total = $req->input("qty")*$req->input("selling_price");
+        $product->totoa_price = $total;
         if($req->file('image')){
             $file = $req->file('image');
             $ext = $file->getClientOriginalExtension();
