@@ -33,4 +33,14 @@ a{
     font-size: 20px;
     padding: 1%;
 }
+#nav-me:hover{
+  background-color: lightblue;
+}
+.card label{
+    font-weight: bold;
+}
+.card .border{
+  
+    
+}
 

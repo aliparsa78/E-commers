@@ -43,6 +43,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/place-order',[CheckoutController::class,'place_order']);
 // My order rout
     Route::get('/my-order',[OrderController::class,'index']);
+    Route::get('/view-order/{id}',[OrderController::class,'view_order']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){

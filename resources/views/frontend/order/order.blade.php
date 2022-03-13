@@ -29,7 +29,7 @@
                             <td>{{$itme->status == "0"? "pending":"completed"}}</td>
                             <td>{{$itme->total_price}}</td>
                             <td>
-                                <a href="" class="btn btn-danger">delete</a>
+                                <a href="view-order/{{$itme->id}}" class="btn btn-info">view</a>
                             </td>
 
                         </tr>

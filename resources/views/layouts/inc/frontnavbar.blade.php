@@ -51,35 +51,32 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Pricing</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url('login')}}">Login</a>
-    </li>
+    
     <li class="nav-item">
       <a class="nav-link" href="#">Regester</a>
     </li>
     <div class="dropdown">
-      <button type="button" class="btn fa fa-user dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn fa fa-user dropdown-toggle text-white mt-1" data-toggle="dropdown">
         Me
       </button>
       <div class="dropdown-menu">
       <li>
-        <a class="dropdown-item" href="{{url('my-order')}}">My Order</a>
+        <a class="dropdown-item" id="nav-me" href="{{url('my-order')}}">My Order</a>
       </li>
         <li>
           <?php if(Auth::user()){
             ?>
-          
-            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+            <a class="dropdown-item" id="nav-me" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            <form id="logout-form"  action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
                     
           <?php
           }else{
             ?>
-            <a class="dropdown-item" href="#">Sign in</a>
+            <a class="dropdown-item" id="nav-me" href="{{url('login')}}">Sign in</a>
             <?php
           } ?>
         </li>
