@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Admin\OrderAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +63,7 @@ Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('/edite-product/{id}',[ProductController::class,'edite']);
     Route::post('/update-product/{id}',[ProductController::class,'update']);
     Route::get('/delete-product/{id}',[ProductController::class,'delete']);
+    Route::get('/orders',[OrderAdminController::class,'index']);
+    Route::get('/admin-view-order/{id}',[OrderAdminController::class,'view']);
+    Route::post('/update-order/{id}',[OrderAdminController::class,'update']);
 });

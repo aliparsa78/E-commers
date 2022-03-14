@@ -7,8 +7,8 @@
     
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-      <li class="nav-item"">
-          <a class="nav-link text-white {{Request::is('catagories') ? 'active':''}}" href="{{url('catagories')}}">
+        <li class="nav-item"">
+          <a class="nav-link text-white {{Request::is('dashboard') ? 'active':''}}" href="{{url('dashboard')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-dashboard nav-link-text ms-1 text-bold">   Dashboard</i>
             </div>
@@ -45,16 +45,16 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{Request::is('add-products') ? 'active':''}}" href="{{url('add-products')}}">
+          <a class="nav-link text-white {{Request::is('orders') ? 'active':''}}" href="{{url('orders')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="nav-link-text ms-1 text-bold">  Orders</i>
+              <i class="fa fa-list  nav-link-text ms-1 text-bold">  Orders</i>
             </div>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{Request::is('add-products') ? 'active':''}}" href="{{url('add-products')}}">
+          <a class="nav-link text-white {{Request::is('users') ? 'active':''}}" href="{{url('users')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="nav-link-text ms-1 text-bold"> Users</i>
+              <i class="fa fa-users nav-link-text ms-1 text-bold"> Users</i>
             </div>
           </a>
         </li>

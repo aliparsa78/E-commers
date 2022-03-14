@@ -3,6 +3,9 @@
     margin-bottom: 30px;
     
 }
+aside .collapse ul li a:active{
+    background-color: rebeccapurple;
+}
 #e-img{
     width:100%; height:350px;
 }
