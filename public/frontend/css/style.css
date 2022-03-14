@@ -39,8 +39,12 @@ a{
 .card label{
     font-weight: bold;
 }
-.card .border{
-  
+.card .border1{
+  border-style: solid;
+  border-color: dark;
+  border-width: 2px;
+  min-height: 50px;
+  background-color: lightgray;
     
 }
 

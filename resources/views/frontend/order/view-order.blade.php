@@ -16,15 +16,15 @@
             <div class="col-md-6">   
                 <div class="card p-4">
                     <label>firstname</label>
-                    <div class="border p-2">{{$order->fname}}</div>
+                    <div class="border1 p-2">{{$order->fname}}</div>
                     <label>lname</label>
-                    <div class="border p-2">{{$order->lname}}</div>
+                    <div class="border1 p-2">{{$order->lname}}</div>
                     <label>email</label>
-                    <div class="border p-2">{{$order->email}}</div>
+                    <div class="border1 p-2">{{$order->email}}</div>
                     <label>phone</label>
-                    <div class="border p-2">{{$order->phone}}</div>
+                    <div class="border1 p-2">{{$order->phone}}</div>
                     <label>shopping address</label>
-                    <div class="border p-2">
+                    <div class="border1 p-2">
                         {{$order->address1}} <br>
                         {{$order->address2}} <br>
                         {{$order->city}} <br>
@@ -33,7 +33,7 @@
                     </div>
 
                     <label>zipcode</label>
-                    <div class="border p-2">{{$order->id}}</div>
+                    <div class="border1 p-2">{{$order->id}}</div>
                     
 
                 </div>

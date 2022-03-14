@@ -7,14 +7,22 @@
     width:100%; height:350px;
 }
 #sidenav-main{
-    background-color:lightskyblue;
-    width:350px;
-    
+    background-color:white;
+    width:300px; 
+    margin-top: 1%;
 }
+aside .sidenav-header{
+    margin-left:50px; color:gray; font-size:40px; font-weight:bold; height:80px;
+}
+#sidenav-main li a:hover{
+    background-color:rebeccapurple;
+}
+li .nav-link .text-white i{
+    color: gray;
+}
+
 .checkout-form{
     font-weight:bold;
 }
-nav{
-    background-color: aqua;
-}
+
 

@@ -1,7 +1,7 @@
 @extends('layouts/admin')
 
 @section('content')
-<div class="container" style="width:120%;">
+<div class="container">
 <div class="card">
     <div class="card-header">
         <h4>Products</h4>
