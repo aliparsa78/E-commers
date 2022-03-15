@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CatagoriesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontController;
@@ -66,4 +67,6 @@ Route::group(['middleware'=>['auth','Admin']],function(){
     Route::get('/orders',[OrderAdminController::class,'index']);
     Route::get('/admin-view-order/{id}',[OrderAdminController::class,'view']);
     Route::post('/update-order/{id}',[OrderAdminController::class,'update']);
+    Route::get('/users',[DashboardController::class,'index']);
+    Route::get('/user-view/{id}',[DashboardController::class,'view']);
 });
