@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\Admin\OrderAdminController;
 
 /*
@@ -46,6 +47,9 @@ Route::middleware(['auth'])->group(function(){
 // My order rout
     Route::get('/my-order',[OrderController::class,'index']);
     Route::get('/view-order/{id}',[OrderController::class,'view_order']);
+    Route::get('/wishlist',[WishlistController::class,'index']);
+    Route::get('/add-to-wishlist/{id}',[WishlistController::class,'add']);
+    Route::get('/delete-wish/{id}',[WishlistController::class,'delete']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){

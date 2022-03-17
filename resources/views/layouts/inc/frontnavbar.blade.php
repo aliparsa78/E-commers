@@ -55,6 +55,9 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Regester</a>
     </li>
+    <li>
+        <a class="nav-link" href="{{url('wishlist')}}">Wishlist</a>
+      </li>
     <div class="dropdown">
       <button type="button" class="btn fa fa-user dropdown-toggle text-white mt-1" data-toggle="dropdown">
         Me

@@ -15,14 +15,17 @@ class CartController extends Controller
             if($req->input("qty")<=0 || $req->input("qty")>10){
                 return redirect('/catagory')->with('status',"Quantity should be in ranch 1 - 10");
             }else{
-                $product_id = $req->prod_id;
+                $product_id = $req->input('prod_id');
+                
                 $qty = $req->input('qty');
                 if(Auth::check()){
                     $product = Product::where('id',$product_id);
+                    
                     if($product){
                         // check wither product exist or not
                         if(Cart::where('prod_id',$product_id)->where('user_id',Auth::id())->exists()){
-                            return response()->json(['status'=>$product->name."Already exist"]);
+                            return redirect('/')->with('status','Product Already Exist');
+
                         }else{
                         // Insert data into cart table
                         $cartitme = new Cart();
