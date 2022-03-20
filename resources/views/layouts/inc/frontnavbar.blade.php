@@ -55,9 +55,22 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Regester</a>
     </li>
+    <?php 
+      use App\Http\Controllers\Auth\LoginController;
+      use App\Models\Cart;
+      use App\Models\Wishlist;
+      if(Auth::user()){
+        $count = Cart::all()->count(); 
+        $wishcount = Wishlist::all()->count();
+      }
+    ?>
+ 
+    <li class="nav-item">
+      <a class="nav-link " href="{{url('mycart')}}">Mycart ({{$count}})</a>
+    </li>
     <li>
-        <a class="nav-link" href="{{url('wishlist')}}">Wishlist</a>
-      </li>
+        <a class="nav-link" href="{{url('wishlist')}}">Wishlist ({{$wishcount}})</a>
+    </li>
     <div class="dropdown">
       <button type="button" class="btn fa fa-user dropdown-toggle text-white mt-1" data-toggle="dropdown">
         Me
@@ -86,19 +99,6 @@
           
       </div>
     </div>
-    <?php 
-      use App\Http\Controllers\Auth\LoginController;
-      use App\Models\Cart;
-      if(Auth::user()){
-        $count = Cart::all()->count();
-      
-    ?>
- 
-    <li class="nav-item">
-      <a class="nav-link " href="{{url('mycart')}}">Mycart {{$count}}</a>
-    </li>
-    <?php
-    }
-    ?>
+    
   </ul>
 </nav>

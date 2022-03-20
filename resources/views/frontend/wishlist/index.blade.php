@@ -37,19 +37,19 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-5 ">
-                                    <p>
+                                <div class="col-md-5" >
+                                    <div class="wishlist-info mt-2">
                                     @if($data->products->qty > 0)
                                     <form action="{{url('add-to-cart')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="qty" value="1">
                                         <input type="hidden" name="prod_id" value="{{$data->products->id}}" class="prod_id">
 
-                                        <button type="submit" class="btn btn-success">add to cart <i class="fa fa-user"></i></button>
+                                        <button type="submit" class="btn btn-success" stye="font-size:20px;" style="float:left; padding: 3px; margin-right:30px;"><i class="fa fa-shopping-cart mr-2"></i>add to cart</button>
                                     </form>
                                     @endif
-                                    <a href="{{url('delete-wish/'.$data->id)}}" class="btn btn-danger fa fa-trash">  Remove</a>
-                                    </p>
+                                    <a href="{{url('delete-wish/'.$data->id)}}" class="btn btn-danger fa fa-trash" >  Remove</a>
+                                    </div>
                                 </div>
                             </div>
                             <hr>
