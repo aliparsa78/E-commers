@@ -11,8 +11,8 @@ use Session;
 class FrontController extends Controller
 {
   function index(){
-      $future_product = Product::where('trending','1')->get();
-      $trednig_catagory = Catagory::where('popular','1')->get();
+      $future_product = App\Models\Products::where('trending','1')->get();
+      $trednig_catagory =App\Models\Catagory::where('popular','1')->get();
       return view('frontend.index',compact('future_product','trednig_catagory'));
   }
   function catagory(){

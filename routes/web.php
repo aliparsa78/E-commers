@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\Frontend\RateController;
 use App\Http\Controllers\Admin\OrderAdminController;
 
 /*
@@ -50,6 +51,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/wishlist',[WishlistController::class,'index']);
     Route::get('/add-to-wishlist/{id}',[WishlistController::class,'add']);
     Route::get('/delete-wish/{id}',[WishlistController::class,'delete']);
+
+    Route::post('/Rate-user',[RateController::class,'index']);
 });
 
 Route::group(['middleware'=>['auth','Admin']],function(){

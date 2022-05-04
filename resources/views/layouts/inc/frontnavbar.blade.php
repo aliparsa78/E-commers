@@ -62,15 +62,18 @@
       if(Auth::user()){
         $count = Cart::all()->count(); 
         $wishcount = Wishlist::all()->count();
-      }
+      
     ?>
  
     <li class="nav-item">
-      <a class="nav-link " href="{{url('mycart')}}">Mycart ({{$count}})</a>
+      <a class="nav-link " href="{{url('mycart')}}">Mycart</a>
     </li>
     <li>
         <a class="nav-link" href="{{url('wishlist')}}">Wishlist ({{$wishcount}})</a>
     </li>
+    <?php  
+      }
+      ?>
     <div class="dropdown">
       <button type="button" class="btn fa fa-user dropdown-toggle text-white mt-1" data-toggle="dropdown">
         Me
@@ -99,6 +102,6 @@
           
       </div>
     </div>
-    
+      
   </ul>
 </nav>

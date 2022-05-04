@@ -40,6 +40,7 @@ Products
         </div>
     </div>
 </div>
+
 @endsection
 </body>
 </html>

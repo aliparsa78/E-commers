@@ -58,8 +58,6 @@ class CatagoriesController extends Controller
                 File::delete($path);
             }
             $file = $req->file('image');
-            
-           
             $exe = $file->getClientOriginalExtension();
             $filename = time().'.'.$exe;
             $file->move('admin/assets/upload/catagory/',$filename);
